@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%; /* Dark Space Black */
+    --foreground: 0 0% 98%; /* Light White/Gray */
+
+    --card: 240 10% 6%; /* Slightly lighter than background */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 190 100% 50%; /* Neon Blue */
+    --primary-foreground: 240 10% 3.9%;
+
+    --secondary: 310 100% 50%; /* Neon Pink */
+    --secondary-foreground: 240 10% 3.9%;
+
+    --muted: 240 5% 25%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 260 80% 60%; /* Light Purple */
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 190 100% 50%; /* Neon Blue for focus rings */
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Ensure dark mode variables are the same as root for this theme */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 190 100% 50%;
+    --primary-foreground: 240 10% 3.9%;
+
+    --secondary: 310 100% 50%;
+    --secondary-foreground: 240 10% 3.9%;
+
+    --muted: 240 5% 25%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 260 80% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 190 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif; /* Consider adding a futuristic font via Google Fonts or similar */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  /* Custom scrollbar for a more modern feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.5);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+}
+
+.glassmorphism {
+  background: rgba(30, 30, 50, 0.3); /* Darker, more translucent */
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.neumorphism-inset {
+  border-radius: 1rem;
+  background: hsl(var(--background));
+  box-shadow: inset 5px 5px 10px hsl(var(--background) / 0.7),
+              inset -5px -5px 10px hsl(var(--card) / 1.1);
+}
+
+.neumorphism-outset {
+  border-radius: 1rem;
+  background: hsl(var(--background));
+  box-shadow: 5px 5px 10px hsl(var(--background) / 0.7),
+              -5px -5px 10px hsl(var(--card) / 1.1);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 5px theme('colors.neon-blue'), 0 0 10px theme('colors.neon-blue'), 0 0 15px theme('colors.neon-blue');
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 5px theme('colors.neon-pink'), 0 0 10px theme('colors.neon-pink'), 0 0 15px theme('colors.neon-pink');
+}
+
+.section-padding {
+  @apply py-16 md:py-24 px-6 md:px-12;
+}
+
+.holographic-text {
+  background: linear-gradient(90deg, theme('colors.neon-blue'), theme('colors.neon-pink'), theme('colors.light-purple'), theme('colors.neon-blue'));
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-bg 10s ease infinite;
+}
+
+/* For 3D card tilt effect */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.perspective {
+  perspective: 1000px;
+}

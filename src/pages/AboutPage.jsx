@@ -46,7 +46,7 @@ const AboutPage = () => {
               <img
                 className="w-full h-full object-cover rounded-lg transform group-hover:scale-110 transition-transform duration-500"
                 alt="A creative portrait or 3D avatar of the developer"
-                src="src\images\enhance image.png" />
+                src="images\enhance image.png"/>
               <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/20 via-transparent to-neon-pink/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="absolute top-4 left-4 p-2 bg-black/50 rounded-md text-xs text-neon-blue">
                 Sanjay Kumar Saini
@@ -70,7 +70,7 @@ const AboutPage = () => {
             </motion.p>
             <motion.p className="text-lg text-muted-foreground leading-relaxed" variants={itemVariants}>
 
-Driven by curiosity and a commitment to innovation, I am always looking to expand my technical skill set and contribute to impactful solutions in the fields of AI, software development, and scalable system architecture.
+              Driven by curiosity and a commitment to innovation, I am always looking to expand my technical skill set and contribute to impactful solutions in the fields of AI, software development, and scalable system architecture.
             </motion.p>
             <motion.div className="grid grid-cols-2 gap-4 pt-4" variants={itemVariants}>
               <div className="flex items-center space-x-3 p-3 glassmorphism rounded-lg">

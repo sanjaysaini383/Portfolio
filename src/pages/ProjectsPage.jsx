@@ -86,7 +86,7 @@ const ProjectCard = ({ project, onOpenModal }) => {
           <CardHeader className="relative p-0">
             <div className="aspect-video overflow-hidden">
               <img
-                src={`src/images/${project.imageUrl}.png`}  //src\images\shelfie.png
+                src={`images/${project.imageUrl}.png`}  //src\images\shelfie.png
                 alt={project.title}
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out"
               />
